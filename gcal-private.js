@@ -1,5 +1,5 @@
-var clientId = '110118209402-1bh2vi6b1dfrt1d6abr3fihnutkm2u15.apps.googleusercontent.com';
-var apiKey = 'AIzaSyCpHiNFwTUj-WC56lDckmT1atCfMiWH5UQ';
+var clientId = 'CLIENT_ID';
+var apiKey = 'API_KEY';
 var scopes = 'https://www.googleapis.com/auth/calendar';
 var events = [];
 var calendarIds = [];
@@ -29,11 +29,12 @@ function handleAuthResult(authResult){
 }
 
 function handleAuthClick(event) {
-	gapi.auth.setToken({
+	//Cannot set a token like the commented part
+	/*gapi.auth.setToken({
 	    access_token: "ya29.CjAyA24cN-CTd208GXOKx-KBuVVCOtoF53fWWHCehyU97Iirek8-WEZku7nBcF-4JTE"
 	});
-	gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
-	//gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
+	gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);*/
+	gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
 	return false;	
 }
 
